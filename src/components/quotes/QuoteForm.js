@@ -33,7 +33,7 @@ const QuoteForm = (props) => {
 
   return (
     <>
-    <Prompt when={isEntered} message={(location) => 'Are you shure you want to leave this page? All your entered data will be lost'}/>
+    <Prompt when={isEntered} message={(location) => 'Are you sure you want to leave this page? All your entered data will be lost'}/>
       <Card>
         <form
           onFocus={formFocusHandler}
