@@ -1,13 +1,25 @@
 import { useParams, Route } from "react-router-dom/cjs/react-router-dom.min";
-import Comments from '../components/comments/Comments'
-
+import Comments from "../components/comments/Comments";
+import HighlightedQuote from "../components/quotes/HighlightedQuote";
+const DUMMY_DATA = [
+  { id: "q1", author: "Max", text: "Learning react is Fun!" },
+  { id: "q2", author: "Maximilian", text: "Learning react is Fun!" },
+];
 const QuoteDetail = () => {
   const params = useParams();
+
+  const quote = DUMMY_DATA.find((quote) => quote.id === params.quoteId);
+
+  if(!quote) {
+    return <p>no quote found</p>
+  }
+  
   return (
     <div>
-      <h1>QuoteDetail</h1>
-      <p>{params.quoteId}</p>
-      <Route path="/quotes/:quoteId/comments"><Comments/></Route>
+      <HighlightedQuote text={quote.text} author={quote.author} />
+      <Route path="/quotes/:quoteId/comments">
+        <Comments />
+      </Route>
     </div>
   );
 };
