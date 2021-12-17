@@ -8,7 +8,6 @@ function App() {
   return (
     <Layout>
       <Switch>
-
         <Route exact path="/">
           <Redirect to="/quotes" />
         </Route>
