@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import {
   useHistory,
   useLocation,
-} from "react-router-dom/cjs/react-router-dom.min";
+} from "react-router-dom";
 
 import QuoteItem from "./QuoteItem";
 import classes from "./QuoteList.module.css";
